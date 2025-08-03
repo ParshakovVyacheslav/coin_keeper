@@ -8,71 +8,61 @@ class LoginForm(AuthenticationForm):
     class Meta:
         model = CustomUser
         fields = ['username', 'password']
+        labels = {
+            'username': _('Username'),
+            'password': _('Password'),
+        }
 
     def __init__(self, *args, **kwargs):
-        super(LoginForm, self).__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Username'),
-            'required': 'True'
-        })
-        self.fields['password'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Password'),
-            'required': 'True'
-        })
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'
+
 
 class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        labels = {
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'username': _('Username'),
+            'email': _('Email'),
+        }
+        help_texts = {
+            'username': _('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        }
 
     def __init__(self, *args, **kwargs):
-        super(UserRegistrationForm, self).__init__(*args, **kwargs)
-        self.fields['first_name'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('First Name'),
-            'required': 'True'
-        })
-        self.fields['last_name'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Last Name'),
-            'required': 'True'
-        })
-        self.fields['username'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Username'),
-            'required': 'True'
-        })
-        self.fields['email'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Email'),
-            'required': 'True'
-        })
-        self.fields['password1'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Password'),
-            'required': 'True'
-        })
-        self.fields['password2'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Retype Password'),
-            'required': 'True'
-        })
+        super().__init__(*args, **kwargs)
+        self.fields['password1'].help_text = None
+        self.fields['password2'].help_text = None
+
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'
 
 
 class ResetPasswordForm(PasswordResetForm):
     class Meta:
         model = CustomUser
         fields = ['email']
+        labels = {
+            'email': _('Email'), 
+        }
 
     def __init__(self, *args, **kwargs):
-        super(ResetPasswordForm, self).__init__(*args, **kwargs)
-        self.fields['email'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Email'),
-            'required': 'True'
-        })
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'
 
 
 class ResetPasswordConfirmForm(SetPasswordForm):
@@ -81,17 +71,18 @@ class ResetPasswordConfirmForm(SetPasswordForm):
         fields = ['new_password1', 'new_password2']
 
     def __init__(self, *args, **kwargs):
-        super(ResetPasswordConfirmForm, self).__init__(*args, **kwargs)
-        self.fields['new_password1'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('New Password'),
-            'required': 'True'
-        })
-        self.fields['new_password2'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Retype New Password'),
-            'required': 'True'
-        })
+        super().__init__(*args, **kwargs)
+        self.fields['new_password1'].help_text = None
+        self.fields['new_password2'].help_text = None
+        self.fields['new_password1'].label = _('New password')
+        self.fields['new_password2'].label = _('Confirm new password')
+        
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'
+
 
 class ChangePasswordForm(PasswordChangeForm):
     class Meta:
@@ -99,19 +90,15 @@ class ChangePasswordForm(PasswordChangeForm):
         fields = ['old_password', 'new_password1', 'new_password2']
 
     def __init__(self, *args, **kwargs):
-        super(ChangePasswordForm, self).__init__(*args, **kwargs)
-        self.fields['old_password'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Old Password'),
-            'required': 'True'
-        })
-        self.fields['new_password1'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('New Password'),
-            'required': 'True'
-        })
-        self.fields['new_password2'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': _('Retype New Password'),
-            'required': 'True'
-        })
+        super().__init__(*args, **kwargs)
+        self.fields['new_password1'].help_text = None
+        self.fields['new_password2'].help_text = None
+        self.fields['old_password'].label = _('Old password')
+        self.fields['new_password1'].label = _('New password')
+        self.fields['new_password2'].label = _('Confirm new password')
+        
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'
