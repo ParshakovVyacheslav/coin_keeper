@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged Out" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h2 class="mb-4">{% trans "You Have Been Logged Out" %}</h2>
+            <div class="alert alert-info">
+                <p>
+                    {% trans "Thank you for using our service. You have been securely logged out." %}
+                </p>
+            </div>
+            <div class="d-grid gap-2">
+                <a href="{% url 'login' %}" class="btn btn-primary">
+                    {% trans "Log In Again" %}
+                </a>
+                <a href="/" class="btn btn-outline-secondary">
+                    {% trans "Return to Homepage" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

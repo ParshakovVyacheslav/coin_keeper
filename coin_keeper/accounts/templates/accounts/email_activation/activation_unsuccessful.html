@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation Failed" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h2 class="mb-4">{% trans "Account Activation Failed" %}</h2>
+            <div class="alert alert-danger">
+                <p>{% trans "The activation link is invalid or has expired." %}</p>
+                <p class="mb-0">
+                    {% trans "Please request a new activation link or contact support if the problem persists." %}
+                </p>
+            </div>
+            <div class="d-grid gap-2">
+                <a href="{% url 'registration_resend_activation' %}" class="btn btn-primary">
+                    {% trans "Resend Activation Email" %}
+                </a>
+                <a href="{% url 'login' %}" class="btn btn-outline-secondary">
+                    {% trans "Back to Login" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

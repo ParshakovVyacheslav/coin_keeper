@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Account Activated" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h2 class="mb-4">{% trans "Account Activated Successfully" %}</h2>
+            <div class="alert alert-success">
+                <p>{% trans "Your account has been successfully activated." %}</p>
+                <p class="mb-0">{% trans "You can now log in and start using our service." %}</p>
+            </div>
+            <a href="{% url 'login' %}" class="btn btn-primary">
+                {% trans "Proceed to Login" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
