@@ -102,3 +102,26 @@ class ChangePasswordForm(PasswordChangeForm):
             field.widget.attrs['placeholder'] = field.label
             if field.required:
                 field.widget.attrs['required'] = 'True'
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['first_name', 'last_name', 'email', 'username']
+        labels = {
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'email': _('Email Address'),
+            'username': _('Username'),
+        }
+        help_texts = {
+            'username': _('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            if field.required:
+                field.widget.attrs['required'] = 'True'

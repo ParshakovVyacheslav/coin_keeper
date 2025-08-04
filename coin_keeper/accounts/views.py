@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
@@ -9,8 +10,11 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.translation import gettext_lazy as _
-from .forms import UserRegistrationForm, LoginForm
+from django.urls import reverse_lazy
+from django.views.generic import UpdateView
+from .forms import UserRegistrationForm, LoginForm, UserEditForm
 from .models import CustomUser
+
 
 
 @login_required
@@ -71,4 +75,18 @@ class CustomLoginView(LoginView):
         if not remember_me:
             self.request.session.set_expiry(0)
             self.request.session.modified = True
+        return super().form_valid(form)
+    
+
+class UserEditView(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = UserEditForm
+    template_name = 'accounts/edit_profile.html'
+    success_url = reverse_lazy('profile')
+    
+    def get_object(self, queryset=None):
+        return self.request.user
+    
+    def form_valid(self, form):
+        messages.success(self.request, _('Your profile has been updated successfully'))
         return super().form_valid(form)
