@@ -46,5 +46,5 @@ urlpatterns = [
         name='password_change_done',
     ),
     path('profile/', views.profile, name='profile'),
-    path('edit_profile', views.ProfileEditView.as_view(), name='edit_profile')
+    path('edit_profile', views.UserEditView.as_view(), name='edit_profile')
 ]
