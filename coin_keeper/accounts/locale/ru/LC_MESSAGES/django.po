@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-07 20:21+0700\n"
+"POT-Creation-Date: 2025-08-07 21:05+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/apps.py:8
+msgid "Accounts"
+msgstr "Пользователи"
+
 #: accounts/forms.py:14
 msgid "Username or Email"
 msgstr "Имя пользователя или Email"
@@ -41,7 +46,8 @@ msgstr "Электронная почта"
 
 #: accounts/forms.py:34 accounts/forms.py:116
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и @/./+/-/_."
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и @/./+/-/_."
 
 #: accounts/forms.py:75 accounts/forms.py:95
 msgid "New password"
@@ -165,7 +171,9 @@ msgstr "Вы вышли из системы"
 
 #: accounts/templates/accounts/logged_out.html:13
 msgid "Thank you for using our service. You have been securely logged out."
-msgstr "Спасибо за использование нашего сервиса. Вы были безопасно выведены из системы."
+msgstr ""
+"Спасибо за использование нашего сервиса. Вы были безопасно выведены из "
+"системы."
 
 #: accounts/templates/accounts/logged_out.html:18
 msgid "Log In Again"
@@ -188,8 +196,8 @@ msgid ""
 "Please enter a correct username and password. Note that both fields may be "
 "case-sensitive."
 msgstr ""
-"Введите правильное имя пользователя и пароль. Обратите внимание, что оба поля "
-"могут быть чувствительны к регистру."
+"Введите правильное имя пользователя и пароль. Обратите внимание, что оба "
+"поля могут быть чувствительны к регистру."
 
 #: accounts/templates/accounts/login.html:41
 msgid "Remember me"
@@ -293,8 +301,7 @@ msgstr "Пароль успешно изменён"
 #: accounts/templates/accounts/password_reset_complete.html:12
 msgid ""
 "Your new password has been set. You may now log in with your new password."
-msgstr ""
-"Ваш новый пароль установлен. Теперь вы можете войти с новым паролем."
+msgstr "Ваш новый пароль установлен. Теперь вы можете войти с новым паролем."
 
 #: accounts/templates/accounts/password_reset_complete.html:15
 msgid "Log In"
