@@ -1,0 +1,404 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-07 20:21+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: accounts/forms.py:14
+msgid "Username or Email"
+msgstr "Имя пользователя или Email"
+
+#: accounts/forms.py:28 accounts/forms.py:110
+msgid "First Name"
+msgstr "Имя"
+
+#: accounts/forms.py:29 accounts/forms.py:111
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: accounts/forms.py:30 accounts/forms.py:113
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: accounts/forms.py:31 accounts/forms.py:54
+msgid "Email"
+msgstr "Электронная почта"
+
+#: accounts/forms.py:34 accounts/forms.py:116
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и @/./+/-/_."
+
+#: accounts/forms.py:75 accounts/forms.py:95
+msgid "New password"
+msgstr "Новый пароль"
+
+#: accounts/forms.py:76 accounts/forms.py:96
+msgid "Confirm new password"
+msgstr "Подтвердите новый пароль"
+
+#: accounts/forms.py:94
+msgid "Old password"
+msgstr "Старый пароль"
+
+#: accounts/forms.py:112
+msgid "Email Address"
+msgstr "Адрес электронной почты"
+
+#: accounts/models.py:6
+msgid "email address"
+msgstr "адрес электронной почты"
+
+#: accounts/models.py:8
+msgid "active"
+msgstr "активный"
+
+#: accounts/models.py:11
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Указывает, следует ли считать пользователя активным. Снимите этот флажок "
+"вместо удаления учетных записей."
+
+#: accounts/templates/accounts/edit_profile.html:4
+#: accounts/templates/accounts/profile.html:44
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+#: accounts/templates/accounts/edit_profile.html:10
+msgid "Edit Your Profile"
+msgstr "Редактирование профиля"
+
+#: accounts/templates/accounts/edit_profile.html:34
+msgid "Cancel"
+msgstr "Отмена"
+
+#: accounts/templates/accounts/edit_profile.html:37
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: accounts/templates/accounts/email_activation/activate_email_message.html:4
+#: accounts/templates/accounts/profile.html:13
+msgid "Hi"
+msgstr "Привет"
+
+#: accounts/templates/accounts/email_activation/activate_email_message.html:6
+msgid "Please click on the link to confirm your registration:"
+msgstr "Пожалуйста, перейдите по ссылке для подтверждения регистрации:"
+
+#: accounts/templates/accounts/email_activation/activate_email_message.html:8
+msgid "If you didn't request this, please ignore this email."
+msgstr "Если вы не запрашивали это, проигнорируйте данное письмо."
+
+#: accounts/templates/accounts/email_activation/activation_successful.html:4
+msgid "Account Activated"
+msgstr "Аккаунт активирован"
+
+#: accounts/templates/accounts/email_activation/activation_successful.html:10
+msgid "Account Activated Successfully"
+msgstr "Аккаунт успешно активирован"
+
+#: accounts/templates/accounts/email_activation/activation_successful.html:12
+msgid "Your account has been successfully activated."
+msgstr "Ваш аккаунт был успешно активирован."
+
+#: accounts/templates/accounts/email_activation/activation_successful.html:13
+msgid "You can now log in and start using our service."
+msgstr "Теперь вы можете войти и начать пользоваться нашим сервисом."
+
+#: accounts/templates/accounts/email_activation/activation_successful.html:16
+msgid "Proceed to Login"
+msgstr "Перейти к входу"
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:4
+msgid "Activation Failed"
+msgstr "Ошибка активации"
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:10
+msgid "Account Activation Failed"
+msgstr "Не удалось активировать аккаунт"
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:12
+msgid "The activation link is invalid or has expired."
+msgstr "Ссылка активации недействительна или устарела."
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:14
+msgid ""
+"Please request a new activation link or contact support if the problem "
+"persists."
+msgstr ""
+"Запросите новую ссылку активации или обратитесь в поддержку, если проблема "
+"сохраняется."
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:19
+msgid "Resend Activation Email"
+msgstr "Отправить письмо активации повторно"
+
+#: accounts/templates/accounts/email_activation/activation_unsuccessful.html:22
+#: accounts/templates/accounts/password_change_done.html:15
+#: accounts/templates/accounts/password_reset_done.html:20
+msgid "Back to Login"
+msgstr "Вернуться к входу"
+
+#: accounts/templates/accounts/logged_out.html:4
+msgid "Logged Out"
+msgstr "Выход из системы"
+
+#: accounts/templates/accounts/logged_out.html:10
+msgid "You Have Been Logged Out"
+msgstr "Вы вышли из системы"
+
+#: accounts/templates/accounts/logged_out.html:13
+msgid "Thank you for using our service. You have been securely logged out."
+msgstr "Спасибо за использование нашего сервиса. Вы были безопасно выведены из системы."
+
+#: accounts/templates/accounts/logged_out.html:18
+msgid "Log In Again"
+msgstr "Войти снова"
+
+#: accounts/templates/accounts/logged_out.html:21
+msgid "Return to Homepage"
+msgstr "Вернуться на главную страницу"
+
+#: accounts/templates/accounts/login.html:4
+msgid "Login"
+msgstr "Вход"
+
+#: accounts/templates/accounts/login.html:10
+msgid "Login to Your Account"
+msgstr "Вход в ваш аккаунт"
+
+#: accounts/templates/accounts/login.html:14
+msgid ""
+"Please enter a correct username and password. Note that both fields may be "
+"case-sensitive."
+msgstr ""
+"Введите правильное имя пользователя и пароль. Обратите внимание, что оба поля "
+"могут быть чувствительны к регистру."
+
+#: accounts/templates/accounts/login.html:41
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: accounts/templates/accounts/login.html:44
+msgid "Sign In"
+msgstr "Войти"
+
+#: accounts/templates/accounts/login.html:47
+msgid "Forgot Password?"
+msgstr "Забыли пароль?"
+
+#: accounts/templates/accounts/login.html:53
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
+#: accounts/templates/accounts/login.html:54
+#: accounts/templates/accounts/register.html:38
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: accounts/templates/accounts/password_change.html:4
+#: accounts/templates/accounts/password_change.html:10
+#: accounts/templates/accounts/profile.html:47
+msgid "Change Password"
+msgstr "Изменить пароль"
+
+#: accounts/templates/accounts/password_change.html:11
+msgid ""
+"For security reasons, please enter your old password, then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"В целях безопасности введите ваш старый пароль, затем дважды введите новый "
+"пароль для подтверждения."
+
+#: accounts/templates/accounts/password_change.html:34
+#: accounts/templates/accounts/password_reset_confirm.html:35
+#: accounts/templates/accounts/register.html:34
+msgid ""
+"Your password must contain at least 8 characters, can't be too common, and "
+"can't be entirely numeric."
+msgstr ""
+"Пароль должен содержать минимум 8 символов, не быть слишком простым и не "
+"состоять только из цифр."
+
+#: accounts/templates/accounts/password_change.html:38
+#: accounts/templates/accounts/password_reset_confirm.html:39
+msgid "Change my password"
+msgstr "Изменить пароль"
+
+#: accounts/templates/accounts/password_change_done.html:4
+msgid "Password Changed"
+msgstr "Пароль изменён"
+
+#: accounts/templates/accounts/password_change_done.html:10
+msgid "Password Changed Successfully"
+msgstr "Пароль успешно изменён"
+
+#: accounts/templates/accounts/password_change_done.html:12
+msgid ""
+"Your password has been updated. For security reasons, you have been logged "
+"out of all devices."
+msgstr ""
+"Ваш пароль был обновлён. В целях безопасности вы были выведены из системы на "
+"всех устройствах."
+
+#: accounts/templates/accounts/password_reset.html:4
+#: accounts/templates/accounts/password_reset.html:10
+msgid "Password Reset"
+msgstr "Сброс пароля"
+
+#: accounts/templates/accounts/password_reset.html:13
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Забыли пароль? Введите ваш email ниже, и мы вышлем инструкции по созданию "
+"нового пароля."
+
+#: accounts/templates/accounts/password_reset.html:30
+msgid "Send Reset Instructions"
+msgstr "Отправить инструкции"
+
+#: accounts/templates/accounts/password_reset.html:35
+msgid "Remembered your password?"
+msgstr "Вспомнили пароль?"
+
+#: accounts/templates/accounts/password_reset.html:36
+msgid "Back to login"
+msgstr "Вернуться к входу"
+
+#: accounts/templates/accounts/password_reset_complete.html:4
+msgid "Password Reset Complete"
+msgstr "Сброс пароля завершён"
+
+#: accounts/templates/accounts/password_reset_complete.html:10
+msgid "Password Reset Successful"
+msgstr "Пароль успешно изменён"
+
+#: accounts/templates/accounts/password_reset_complete.html:12
+msgid ""
+"Your new password has been set. You may now log in with your new password."
+msgstr ""
+"Ваш новый пароль установлен. Теперь вы можете войти с новым паролем."
+
+#: accounts/templates/accounts/password_reset_complete.html:15
+msgid "Log In"
+msgstr "Войти"
+
+#: accounts/templates/accounts/password_reset_confirm.html:4
+#: accounts/templates/accounts/password_reset_confirm.html:10
+msgid "Set New Password"
+msgstr "Установить новый пароль"
+
+#: accounts/templates/accounts/password_reset_confirm.html:11
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Пожалуйста, введите новый пароль дважды для подтверждения правильности ввода."
+
+#: accounts/templates/accounts/password_reset_done.html:4
+msgid "Password Reset Email Sent"
+msgstr "Письмо для сброса пароля отправлено"
+
+#: accounts/templates/accounts/password_reset_done.html:10
+msgid "Check Your Email"
+msgstr "Проверьте вашу почту"
+
+#: accounts/templates/accounts/password_reset_done.html:13
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered."
+msgstr ""
+"Мы отправили вам инструкции по смене пароля, если аккаунт с указанным email "
+"существует."
+
+#: accounts/templates/accounts/password_reset_done.html:16
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Если вы не получили письмо, убедитесь что ввели правильный email и проверьте "
+"папку спам."
+
+#: accounts/templates/accounts/profile.html:4
+msgid "Your Profile"
+msgstr "Ваш профиль"
+
+#: accounts/templates/accounts/profile.html:18
+msgid "You're successfully logged in. This is your personal space."
+msgstr "Вы успешно вошли. Это ваше личное пространство."
+
+#: accounts/templates/accounts/profile.html:23
+msgid "Profile Information"
+msgstr "Информация профиля"
+
+#: accounts/templates/accounts/profile.html:26
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: accounts/templates/accounts/profile.html:28
+msgid "First Name:"
+msgstr "Имя:"
+
+#: accounts/templates/accounts/profile.html:33
+msgid "Last Name:"
+msgstr "Фамилия:"
+
+#: accounts/templates/accounts/profile.html:36
+msgid "Email:"
+msgstr "Email:"
+
+#: accounts/templates/accounts/profile.html:52
+msgid "Logout"
+msgstr "Выйти"
+
+#: accounts/templates/accounts/register.html:4
+msgid "Registration"
+msgstr "Регистрация"
+
+#: accounts/templates/accounts/register.html:10
+msgid "Create Account"
+msgstr "Создать аккаунт"
+
+#: accounts/templates/accounts/register.html:43
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: accounts/templates/accounts/register.html:44
+msgid "Sign in"
+msgstr "Войти"
+
+#: accounts/views.py:33
+msgid "Activate your account."
+msgstr "Активируйте ваш аккаунт."
+
+#: accounts/views.py:46
+msgid ""
+"Account created successfully. Please check your email to activate your "
+"account."
+msgstr ""
+"Аккаунт успешно создан. Пожалуйста, проверьте вашу почту для активации."
+
+#: accounts/views.py:49
+msgid "Account creation failed. Please try again."
+msgstr "Не удалось создать аккаунт. Пожалуйста, попробуйте снова."
+
+#: accounts/views.py:91
+msgid "Your profile has been updated successfully"
+msgstr "Ваш профиль был успешно обновлён"
