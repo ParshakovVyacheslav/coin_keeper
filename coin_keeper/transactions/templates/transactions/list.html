@@ -44,7 +44,7 @@
                         {% for transaction in page_obj %}
                         <tr>
                             <td>{{ transaction.date|date:"SHORT_DATE_FORMAT" }}</td>
-                            <td>{{ transaction.category.name }}</td>
+                            <td>{% trans transaction.category.name %}</td>
                             <td>{{ transaction.description|truncatechars:30 }}</td>
                             <td class="text-end {% if transaction.category.type == 'IN' %}text-success{% else %}text-danger{% endif %}">
                                 {% if transaction.category.type == 'IN' %}+{% else %}-{% endif %}
