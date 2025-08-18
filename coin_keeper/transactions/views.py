@@ -7,6 +7,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import TransactionForm
 from .models import Category, Transaction
 from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+from django.utils.http import url_has_allowed_host_and_scheme
 
 def create_transaction(request):
     if request.method == "POST":
@@ -52,3 +55,19 @@ class TransactionsListView(LoginRequiredMixin, ListView):
                       .filter(user=self.request.user)\
                       .select_related('category')\
                       .order_by('-date')
+    
+
+@require_POST
+@login_required
+def delete_transaction(request, id):
+    try:
+        transaction = Transaction.objects.filter(user=request.user).get(id=id)
+        transaction.delete()
+        messages.success(request, _('Transaction deleted successfully'))
+    except Transaction.DoesNotExist:
+        messages.error(request, _('Transaction not found'))
+
+    referer = request.META.get('HTTP_REFERER', '/')
+    if url_has_allowed_host_and_scheme(referer, allowed_hosts={request.get_host()}):
+        return redirect(referer)
+    return redirect(reverse_lazy('transactions_list'))
