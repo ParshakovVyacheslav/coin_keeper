@@ -3,8 +3,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import TransactionForm
 from .models import Category, Transaction
+from django.views.generic import ListView
 
 def create_transaction(request):
     if request.method == "POST":
@@ -41,3 +43,14 @@ def create_transaction(request):
         return render(request, 'transactions/create.html', {'form': form})
     
         
+class TransactionsListView(LoginRequiredMixin, ListView):
+    model = Transaction
+    paginate_by = 10
+    context_object_name = 'transactions'
+    template_name = 'transactions/list.html'
+
+    def get_queryset(self):
+        return super().get_queryset()\
+                      .filter(user=self.request.user)\
+                      .select_related('category')\
+                      .order_by('-date')

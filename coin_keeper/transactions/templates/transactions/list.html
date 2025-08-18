@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Transactions history" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">{% trans "Transactions history" %}</h2>
+            
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">
+                    {% blocktrans with page=page_obj.number total=page_obj.paginator.num_pages %}
+                        Page {{ page }} of {{ total }}
+                    {% endblocktrans %}
+                </span>
+                <div>
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-sm btn-outline-primary">
+                            {% trans "Previous" %}
+                        </a>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-sm btn-outline-primary ms-1">
+                            {% trans "Next" %}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Date" %}</th>
+                            <th>{% trans "Category" %}</th>
+                            <th>{% trans "Description" %}</th>
+                            <th class="text-end">{% trans "Amount" %}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in page_obj %}
+                        <tr>
+                            <td>{{ transaction.date|date:"SHORT_DATE_FORMAT" }}</td>
+                            <td>{{ transaction.category.name }}</td>
+                            <td>{{ transaction.description|truncatechars:30 }}</td>
+                            <td class="text-end {% if transaction.category.type == 'IN' %}text-success{% else %}text-danger{% endif %}">
+                                {% if transaction.category.type == 'IN' %}+{% else %}-{% endif %}
+                                {{ transaction.amount }}
+                            </td>
+                            <td class="text-end">
+                                <a href="#" class="text-danger" title="{% trans 'Delete' %}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center text-muted py-4">
+                                {% trans "No transactions found" %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
