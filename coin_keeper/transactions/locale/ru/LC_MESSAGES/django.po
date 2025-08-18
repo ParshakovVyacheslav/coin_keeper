@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-18 16:37+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: transactions/forms.py:9
+msgid "Transaction Type"
+msgstr "Тип транзакции"
+
+#: transactions/forms.py:15 transactions/models.py:33 transactions/models.py:67
+#: transactions/templates/transactions/list.html:37
+msgid "Category"
+msgstr "Категория"
+
+#: transactions/forms.py:29 transactions/models.py:54
+#: transactions/templates/transactions/list.html:39
+msgid "Amount"
+msgstr "Сумма"
+
+#: transactions/forms.py:39
+msgid "Enter category name"
+msgstr "Введите название категории"
+
+#: transactions/forms.py:43 transactions/models.py:59
+#: transactions/templates/transactions/list.html:38
+msgid "Description"
+msgstr "Описание"
+
+#: transactions/migrations/0002_add_default_categories.py:12
+msgid "Food/Groceries"
+msgstr "Еда/Продукты"
+
+#: transactions/migrations/0002_add_default_categories.py:13
+msgid "Transportation"
+msgstr "Транспорт"
+
+#: transactions/migrations/0002_add_default_categories.py:14
+msgid "Utilities"
+msgstr "Коммунальные услуги"
+
+#: transactions/migrations/0002_add_default_categories.py:15
+msgid "Rent/Mortgage"
+msgstr "Аренда/Ипотека"
+
+#: transactions/migrations/0002_add_default_categories.py:16
+msgid "Entertainment"
+msgstr "Развлечения"
+
+#: transactions/migrations/0002_add_default_categories.py:17
+msgid "Healthcare"
+msgstr "Здравоохранение"
+
+#: transactions/migrations/0002_add_default_categories.py:18
+msgid "Clothing"
+msgstr "Одежда"
+
+#: transactions/migrations/0002_add_default_categories.py:19
+msgid "Education"
+msgstr "Образование"
+
+#: transactions/migrations/0002_add_default_categories.py:20
+msgid "Gifts/Donations"
+msgstr "Подарки/Пожертвования"
+
+#: transactions/migrations/0002_add_default_categories.py:21
+msgid "Travel"
+msgstr "Путешествия"
+
+#: transactions/migrations/0002_add_default_categories.py:22
+msgid "Personal Care"
+msgstr "Личная гигиена"
+
+#: transactions/migrations/0002_add_default_categories.py:23
+msgid "Insurance"
+msgstr "Страхование"
+
+#: transactions/migrations/0002_add_default_categories.py:24
+msgid "Taxes"
+msgstr "Налоги"
+
+#: transactions/migrations/0002_add_default_categories.py:25
+msgid "Debt Payments"
+msgstr "Погашение долгов"
+
+#: transactions/migrations/0002_add_default_categories.py:26
+msgid "Other Expenses"
+msgstr "Другие расходы"
+
+#: transactions/migrations/0002_add_default_categories.py:30
+msgid "Salary"
+msgstr "Зарплата"
+
+#: transactions/migrations/0002_add_default_categories.py:31
+msgid "Freelance"
+msgstr "Фриланс"
+
+#: transactions/migrations/0002_add_default_categories.py:32
+msgid "Investments"
+msgstr "Инвестиции"
+
+#: transactions/migrations/0002_add_default_categories.py:33
+msgid "Rental Income"
+msgstr "Арендный доход"
+
+#: transactions/migrations/0002_add_default_categories.py:34
+msgid "Dividends"
+msgstr "Дивиденды"
+
+#: transactions/migrations/0002_add_default_categories.py:35
+msgid "Pension"
+msgstr "Пенсия"
+
+#: transactions/migrations/0002_add_default_categories.py:36
+msgid "Social Benefits"
+msgstr "Социальные выплаты"
+
+#: transactions/migrations/0002_add_default_categories.py:37
+msgid "Gifts Received"
+msgstr "Полученные подарки"
+
+#: transactions/migrations/0002_add_default_categories.py:38
+msgid "Bonus"
+msgstr "Бонус"
+
+#: transactions/migrations/0002_add_default_categories.py:39
+msgid "Other Income"
+msgstr "Другие доходы"
+
+#: transactions/models.py:9
+msgid "Income"
+msgstr "Доход"
+
+#: transactions/models.py:10
+msgid "Expense"
+msgstr "Расход"
+
+#: transactions/models.py:13
+msgid "Name"
+msgstr "Название"
+
+#: transactions/models.py:17
+msgid "Type"
+msgstr "Тип"
+
+#: transactions/models.py:27 transactions/models.py:51
+msgid "User"
+msgstr "Пользователь"
+
+#: transactions/models.py:34
+msgid "Categories"
+msgstr "Категории"
+
+#: transactions/models.py:72 transactions/templates/transactions/list.html:36
+msgid "Date"
+msgstr "Дата"
+
+#: transactions/models.py:77
+msgid "Transaction"
+msgstr "Транзакция"
+
+#: transactions/models.py:78
+msgid "Transactions"
+msgstr "Транзакции"
+
+#: transactions/templates/transactions/create.html:4
+#: transactions/templates/transactions/create.html:10
+msgid "Create transaction"
+msgstr "Создать транзакцию"
+
+#: transactions/templates/transactions/create.html:32
+msgid "Create"
+msgstr "Создать"
+
+#: transactions/templates/transactions/list.html:4
+#: transactions/templates/transactions/list.html:10
+msgid "Transactions history"
+msgstr "История транзакций"
+
+#: transactions/templates/transactions/list.html:14
+#, python-format
+msgid ""
+"\n"
+"                        Page %(page)s of %(total)s\n"
+"                    "
+msgstr ""
+"\n"
+"                        Страница %(page)s из %(total)s\n"
+"                    "
+
+#: transactions/templates/transactions/list.html:21
+msgid "Previous"
+msgstr "Назад"
+
+#: transactions/templates/transactions/list.html:26
+msgid "Next"
+msgstr "Вперёд"
+
+#: transactions/templates/transactions/list.html:68
+msgid "No transactions found"
+msgstr "Транзакции не найдены"
+
+#: transactions/views.py:42
+msgid "Transaction created successfully!"
+msgstr "Транзакция успешно создана!"
+
+#: transactions/views.py:66
+msgid "Transaction deleted successfully"
+msgstr "Транзакция успешно удалена"
+
+#: transactions/views.py:68
+msgid "Transaction not found"
+msgstr "Транзакция не найдена"
