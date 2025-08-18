@@ -13,7 +13,7 @@ def create_transaction(request):
         form = TransactionForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            category_name = cd.get('category_name', '').strip()
+            category_name = cd.get('category', '').strip()
             type = cd['type']
 
             with transaction.atomic():
@@ -37,10 +37,8 @@ def create_transaction(request):
                 )
             
             messages.success(request, _('Transaction created successfully!'))
-            return redirect(reverse_lazy('transactions_list'))
-    else:
-        form = TransactionForm()
-        return render(request, 'transactions/create.html', {'form': form})
+    form = TransactionForm()
+    return render(request, 'transactions/create.html', {'form': form})
     
         
 class TransactionsListView(LoginRequiredMixin, ListView):
