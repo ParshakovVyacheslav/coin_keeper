@@ -22,7 +22,7 @@ def create_transaction(request):
             with transaction.atomic():
                 if not category_name:
                     category, created = Category.objects.get_or_create(
-                        name='Other Income' if type == Category.CategoryType.INCOME else 'Other Expense',
+                        name='Other Income' if type == Category.CategoryType.INCOME else 'Other Expenses',
                         type=type,
                         user=None
                     )
