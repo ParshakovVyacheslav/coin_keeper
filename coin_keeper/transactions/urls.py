@@ -6,4 +6,5 @@ urlpatterns = [
     path('create/', views.create_transaction, name='transaction_create'),
     path('list/', views.TransactionsListView.as_view(), name='transactions_list'),
     path('delete/<int:id>/', views.delete_transaction, name='transaction_delete'),
+    path('analytics/', views.analytics, name='transactions_analytics')
 ]

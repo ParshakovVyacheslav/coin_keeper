@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Analytics" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">{% trans "Analytics" %}</h2>
+            
+            <form method="get" class="mb-4">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        {{ form.type.label_tag }}
+                        {{ form.type }}
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        {{ form.date_from.label_tag }}
+                        {{ form.date_from }}
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        {{ form.date_to.label_tag }}
+                        {{ form.date_to }}
+                    </div>
+                    <div class="col-md-3 mb-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">
+                            {% trans "Apply filters" %}
+                        </button>
+                    </div>
+                </div>
+                {{ form.page }}
+                {{ form.category }}
+            </form>
+
+            <div class="mb-4">
+                <h4>{% trans "Total amount" %}</h4>
+                <p class="fs-3">{{ sum }}</p>
+            </div>
+
+            <div class="mb-4">
+                <div class="list-group">
+                    {% if not category %}
+                        {% for category, category_sum in categories_sum %}
+                            <a href="?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}category={{ category }}&page=1" 
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                {{ category }}
+                                <span class="badge bg-primary rounded-pill">{{ category_sum }}</span>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <a href="?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}category={{ category }}&page=1" 
+                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            {{ category }}
+                            <span class="badge bg-primary rounded-pill">{{ sum }}</span>
+                        </a>
+                        <a href="?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}category=&page=1" 
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                {% trans "<- All categories" %}
+                            </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% include "transactions\history.html" %}    
+        </div>
+    </div>
+</div>
+{% endblock %}
