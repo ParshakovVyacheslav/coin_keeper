@@ -101,7 +101,7 @@ USE_L10N = True
 
 LANGUAGES = [('en', 'English'), ('ru', 'Русский')]
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'),]
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), os.path.join(BASE_DIR, 'templates/locale')]
 
 USE_TZ = True
 
