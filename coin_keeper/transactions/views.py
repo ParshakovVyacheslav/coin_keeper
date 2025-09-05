@@ -105,6 +105,9 @@ def analytics(request):
         categories_sum = transactions.values_list('category__name')\
                                      .annotate(total_sum=Sum('amount'))\
                                      .values_list('category__name', 'total_sum')
+    else:
+        categories_sum = [(category, sum),]
+
 
     # Pagination
     paginator = Paginator(transactions, 5)
@@ -119,11 +122,10 @@ def analytics(request):
     context = {
         'form': form,
         'page_obj': transactions,
-        'sum': sum
+        'sum': sum,
+        'categories_sum': categories_sum
     }
     if category:
         context['category'] = category
-    else:
-        context['categories_sum'] = categories_sum
 
     return render(request, 'transactions/analytics.html', context)
